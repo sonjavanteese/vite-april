@@ -1,0 +1,33 @@
+{
+  "name": "vite-april",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
+    "@windicss/plugin-animations": "^1.0.9",
+    "svelte": "^3.44.0",
+    "vite": "^2.9.5",
+    "vite-plugin-windicss": "^1.8.4",
+    "windicss": "^3.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonjavanteese/vite-april.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sonjavanteese/vite-april/issues"
+  },
+  "homepage": "https://github.com/sonjavanteese/vite-april#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^1.35.2",
+    "svelte-spa-router": "^3.2.0"
+  }
+}
