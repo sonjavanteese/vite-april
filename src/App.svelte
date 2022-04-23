@@ -1,65 +1,36 @@
 <script>
-  import logo from './assets/svelte.png'
-  import Counter from './lib/Counter.svelte'
+  import Router from 'svelte-spa-router'
+  import {routes} from './routes'
+  import { navData } from './lib/data'
+  import { user } from './lib/stores'
+  import { supabase } from './lib/db'
+  user.set(supabase.auth.user());
+  supabase.auth.onAuthStateChange((event, session) => {
+    if (event == 'SIGNED_IN') {
+      user.set(session.user)
+      // console.log('SIGNED_IN', session)
+    } else {
+      user.set(null)
+    }
+  }) 
 </script>
 
-<main>
-  <img src={logo} alt="Svelte Logo" />
-  <h1>Hello world!</h1>
 
-  <Counter />
+<header>
+  <nav class="flex items-center border-b space-x-2 px-2">
+    {#each navData as {path, name}}
+    <a href="#{path}" class="px-4 py-2 shadow">{name}</a>
+    {/each}   
+  </nav>
+</header>
 
-  <p>
-    Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte
-    apps.
-  </p>
-
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme">SvelteKit</a> for
-    the officially supported framework, also powered by Vite!
-  </p>
+<main id="main">
+  <Router {routes}/>
 </main>
+
 
 <style>
   :root {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-
-  main {
-    text-align: center;
-    padding: 1em;
-    margin: 0 auto;
-  }
-
-  img {
-    height: 16rem;
-    width: 16rem;
-  }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4rem;
-    font-weight: 100;
-    line-height: 1.1;
-    margin: 2rem auto;
-    max-width: 14rem;
-  }
-
-  p {
-    max-width: 14rem;
-    margin: 1rem auto;
-    line-height: 1.35;
-  }
-
-  @media (min-width: 480px) {
-    h1 {
-      max-width: none;
-    }
-
-    p {
-      max-width: none;
-    }
+    --pw: 680px;
   }
 </style>
