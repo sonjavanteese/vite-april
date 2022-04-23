@@ -1,8 +1,8 @@
-import { writable } from "svelte/store";
+import { writable } from 'svelte/store';
 
 export const toasts = writable([]);
 
-export function addToast(msg, titel = 'Info', type = "info", removeAfter = 5000) {
+export function addToast(msg, titel = 'Info', type = "info", removeAfter = 4000) {
 
     const id = `${new Date().valueOf()}-${msg}`;
     toasts.update((all) => [

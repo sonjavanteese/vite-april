@@ -28,7 +28,7 @@
   }
 </script>
 
-<div class="shadow rounded-lg">
+<div class="w-full shadow rounded-lg bg-white">
   <form on:submit|preventDefault={login} class="py-6 px-6 space-y-2">
         <fieldset>
           <label for="email" class="block mb-1 text-xs font-thin text-gray-600">
@@ -38,16 +38,14 @@
             type="email"
             id="email"
             bind:value={email}
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm
-            rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full
-            p-2.5 px-4"
-            placeholder="user@nwp-cgn.de"
+            class="input"
+            placeholder="email"
             required />
         </fieldset>
         <fieldset>
           <label
-            for="password"
-            class="block mb-1 text-xs font-thin text-gray-600">
+          class="block mb-1 text-xs font-thin text-gray-600"
+            for="password">
             Password
           </label>
           <input
@@ -55,9 +53,7 @@
             id="password"
             bind:value={password}
             placeholder="••••••"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm
-            rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full
-            p-2.5 px-4"
+            class="input"
             required />
         </fieldset>
         <div class="py-3">

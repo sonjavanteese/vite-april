@@ -3,8 +3,7 @@
   import JsonEdit from "../../../lib/flow/JsonEdit.svelte";
   import Page from "../../../lib/flow/Page.svelte";
   import { supabase } from "../../../lib/db";
-  import { _editop } from "../../../lib/stores";
-  import { slide } from "svelte/transition";
+  import { _editop, _edit } from "../../../lib/stores";
   export let params;
   let loading, promise, selected, loaded;
   const fetchDetail = async () => {
@@ -37,13 +36,13 @@
 
 </script>
 
-<Page>
+<Page style="--pw: 100%;">
 
   {#await promise}
     <Loader />
   {:then payload}
     <section
-      class="mx-auto px-4 bg-white flex flex-col py-4 space-y-0"
+      class="w-full bg-white flex flex-col py-4 space-y-0"
     >
       <div class="py-2" class:opacity-0={!loaded}>
         <JsonEdit on:loaded={() => { loaded = true }} options={$_editop} />

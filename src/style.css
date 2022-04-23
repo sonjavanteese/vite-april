@@ -80,14 +80,18 @@ body {
   pre {
     @apply p-2 bg-gray-50 overflow-auto text-gray-400;
   }
+
+  .form-group {
+    @apply mb-2;
+  }
   
   .input, .form-control {
-    @apply appearance-none w-full px-4 py-2.5 text-base leading-none bg-white rounded border-gray-200 outline-none focus:outline-none focus:border-gray-400;
+    @apply appearance-none w-full px-3 py-2.5 text-base leading-none bg-white rounded border-gray-200 outline-none focus:outline-none focus:border-gray-400;
   }
   .input[disabled], .form-control[disabled] {
     @apply bg-gray-50 text-gray-700 cursor-not-allowed;
   }
-  
+
   .btn[disabled] {
     @apply cursor-not-allowed;
   }
@@ -98,3 +102,11 @@ body {
   .section {
     @apply container mx-auto px-4;
   }
+  h3{
+    @apply leading-4;
+  }
+  .btn-group {
+    @apply inline-flex shadow-md hover:shadow-lg focus:shadow-lg my-2 mx-1;
+  }
+   
+  

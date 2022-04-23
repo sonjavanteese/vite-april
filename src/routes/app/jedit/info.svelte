@@ -59,7 +59,7 @@
   $: _order.set(oda);
 </script>
 
-<Page>
+<Page style="--pw: 100%;">
   <div class="py-4 space-y-4">
     <Dheader pid={2} on:reload={reload} ed={true} />
     {#await promise}

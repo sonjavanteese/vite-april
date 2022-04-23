@@ -24,7 +24,7 @@ export const appData = [
     "link": {
       "path": "/editor",
       "name": "Editor",
-      "icon": "pen"
+      "icon": "terminal"
     }
   },
   {

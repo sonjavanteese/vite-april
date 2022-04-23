@@ -26,10 +26,10 @@
   const addNew = async () => {
     try {
       const { data, error } = await supabase
-        .from("datalist")
-        .insert([{ titel: newTask }]);
+        .from("bb_classics")
+        .insert([{ titel: 'newTask' }]);
       // console.log(newTask ? newTask : 'Error')
-      await getData();
+      await reload();
       newTask = "";
     } catch (err) {
       console.log(err);
@@ -50,12 +50,15 @@
 
 
   <div class="py-4 space-y-4">
-        <Dheader pid={2} on:reload={reload} />
+    <Dheader pid={2} on:reload={reload} />
+    <nav>
+      <button on:click={addNew}>Add</button>    
+    </nav>
     {#await promise}
       <Loader />
     {:then payload}
       <section
-        class="bg-white flex flex-col py-4 space-y-4"
+        class="bg-white flex flex-col py-2 space-y-2"
       >
         
         <div class="flex justify-center">

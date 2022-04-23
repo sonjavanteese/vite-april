@@ -25,7 +25,7 @@
   }
 </script>
 
-<div class="shadow rounded-lg">
+<div class="w-full shadow rounded-lg bg-white">
   <form on:submit|preventDefault class="py-6 px-6 space-y-2">
         <fieldset>
           <label for="t1" class="block mb-1 text-xs font-thin text-gray-600">

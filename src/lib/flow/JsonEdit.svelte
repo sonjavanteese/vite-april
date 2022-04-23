@@ -55,14 +55,21 @@
 
 <style>
   @import url("./boot.css");
+  :root {
+    --bs-light-rgb: #f6f6f6;
+  }
   :global(#json-editor-form img),
   :global(#json-editor-form video) {
     max-width: 100%;
     height: auto;
-    max-height: 200px;
+    max-height: 160px;
 	  margin: 1rem 0;
   }
   :global(#json-editor-form .card-title) {
     font-size: 1rem;
+  }
+  :global(#json-editor-form button) {
+    font-size: 1rem;
+    @apply py-2 px-3;
   }
 </style>

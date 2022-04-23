@@ -42,7 +42,7 @@
   <video
     {poster}
     {src}
-	controls
+    controls
     bind:volume
     bind:muted
     bind:currentTime={time}
@@ -53,11 +53,10 @@
   </video>
 </div>
 
-
 <style>
   @import url("https://css.gg/play-button.css");
   @import url("https://css.gg/play-pause.css");
-  @import url('https://css.gg/volume.css');
+  @import url("https://css.gg/volume.css");
   .time {
     width: 3em;
   }

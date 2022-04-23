@@ -92,13 +92,13 @@ export default defineConfig({
       const buttons = {
         '.btn': {
           padding: '.5rem 1rem',
-          marginRight: '.25rem',
+          marginRight: '0',
           borderRadius: '.25rem',
           fontWeight: '600',
         },
         '.btn-link': {
           padding: '.5rem 1rem',
-          marginRight: '.25rem',
+          marginRight: '0',
           borderRadius: '.25rem',
           fontWeight: '600',
           textAlign: 'center',
