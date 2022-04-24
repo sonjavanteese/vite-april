@@ -11,4 +11,4 @@
 
 
 
-<Router {routes} {prefix} />
+<Router {routes} {prefix} restoreScrollState={true} />

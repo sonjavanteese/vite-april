@@ -4,6 +4,7 @@
   import Dheader from "../../../lib/flow/Dheader.svelte";
   import { _edit, _order } from "../../../lib/stores";
   import { supabase } from "../../../lib/db";
+  import { push, link } from "svelte-spa-router";
   let oda, newTask, promise;
   oda = $_order;
   const getData = async (filter) => {
@@ -67,7 +68,8 @@
           >
             {#each payload as { titel,info,tags,fileurl,screen,thumb,id }}
               <a
-                href="#/bb/{id}"
+                href="/bb/{id}"
+                use:link
                 class="
                         flex
                         flex-col

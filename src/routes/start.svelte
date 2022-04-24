@@ -1,6 +1,6 @@
 <script>
   import { Modal, Content, Trigger } from "sv-popup";
-  import { push } from "svelte-spa-router";
+  import { push, link } from "svelte-spa-router";
   import Page from "../lib/flow/Page.svelte";
   import SignIn from "../lib/flow/SignIn.svelte";
   import UserPanel from "../lib/flow/UserPanel.svelte";
@@ -41,10 +41,3 @@
     {/if}
   </div>
 </Page>
-
-<!-- 
-{#if !$user}
-<SignIn />
-{:else}
-<UserPanel />
-{/if} -->
