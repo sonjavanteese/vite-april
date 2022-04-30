@@ -1,43 +1,46 @@
 <script>
-  import { Modal, Content, Trigger } from "sv-popup";
   import { push, link } from "svelte-spa-router";
-  import Page from "../lib/flow/Page.svelte";
-  import SignIn from "../lib/flow/SignIn.svelte";
-  import UserPanel from "../lib/flow/UserPanel.svelte";
-  
-  import { pageData } from "../lib/data";
-  import { user } from "../lib/stores";
-  let { titel, sub } = pageData[0];
+  import Page from "../lib/windi/Page.svelte";
+  import Auth from "../lib/windi/Auth.svelte";
+  import { user, navData, appData  } from "../lib/data";
+  const pid = 0;
+  let { head } = appData[pid];
 </script>
 
-<Page style="--pw: 500px;">
-  <div class="absolute inset-0 flex flex-col items-center justify-center">
-    <hgroup class="text-center py-8 space-y-4">
-      <h2 class="text-semibold">{titel}</h2>
-      <h4>{sub}</h4>
-    </hgroup>
-
-    {#if !$user}
-      <Modal basi small={true}>
-        <Content>
-          <SignIn />
-        </Content>
-        <Trigger>
-          <button class="btn btn-blue">Sign In</button>
-        </Trigger>
-      </Modal>
-    {:else}
-      <div class="grid grid-cols-2 gap-2">
-        <button class="btn btn-blue" on:click={() => push('/editor')}> Start </button>
-        <Modal basi small={true}>
-          <Content>
-            <UserPanel />
-          </Content>
-          <Trigger>
-            <button class="btn btn-blue">User</button>
-          </Trigger>
-        </Modal>
+<Page>
+    <header
+      class="py-12 px-4 text-center bg-pink-800 text-white bg-no-repeat bg-contain"
+      style="background-image: url({head.bg ? head.bg : ''});"
+    >
+      <hgroup class="py-4 space-y-4">
+        <h2>{head.titel ? head.titel : 'Nwp-Studio'}</h2>
+        <h4>
+          {#if $user}
+            {head.sub ? head.sub : 'Startseite'}
+          {:else}
+            Signed Out
+          {/if}
+        </h4>
+      </hgroup>
+    </header>
+    <hr />
+    <section class="container mx-auto px-2">
+      <div class="py-4">
+        <Auth popup class="shadow bg-white rounded-lg w-full">
+          <div slot="auth" class="py-8">
+            <ul>
+              {#each navData as { path, name, icon, sub }, i}
+                {#if i != 0 && !sub}
+                  <li>
+                    <a href={path} use:link>{name}</a>
+                  </li>
+                {/if}
+              {:else}
+                <li>... loading</li>
+              {/each}
+            </ul>
+          </div>
+        </Auth>
       </div>
-    {/if}
-  </div>
-</Page>
+    </section>
+  </Page>

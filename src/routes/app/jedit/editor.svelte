@@ -1,8 +1,8 @@
 <script>
-  import Loader from "../../../lib/flow/Loader.svelte";
-  import JsonEdit from "../../../lib/flow/JsonEdit.svelte";
-  import Page from "../../../lib/flow/Page.svelte";
-  import { supabase } from "../../../lib/db";
+  import Loader from "../../../lib/windi/Loader.svelte";
+  import JsonEdit from "../../../lib/windi/JsonEdit.svelte";
+  import Page from "../../../lib/windi/Page.svelte";
+  import { supabase } from "../../../lib/data";
   import { _editop, _edit } from "../../../lib/stores";
   export let params;
   let loading, promise, selected, loaded;

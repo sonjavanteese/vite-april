@@ -34,14 +34,5 @@
   font-family: "Segoe UI", "Tahoma", "Calibri", "Verdana", sans-serif;
   color: #999;
   }
-  
-  .notifier {
-  @apply bg-white rounded-none border-solid border-l-4 box-border mb-3 opacity-100 p-2 relative w-full hover:opacity-100;
-  min-height: 62px;
-  border-left: 4px solid #95a5a6;
-  box-shadow: 0 1px 10px 0 rgba(0,0,0,.1), 0 2px 15px 0 rgba(0,0,0,.05);
-  transform: translateX(100%);
-  transition: all .6s cubic-bezier(0.5, -0.5, 0.3, 1.4), opacity .6s ease;
-  }
-  
+   
 </style>

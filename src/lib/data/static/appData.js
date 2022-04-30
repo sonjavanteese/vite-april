@@ -4,56 +4,119 @@ export const appData = [
     "slug": "start",
     "head": {
       "titel": "Nwp-Studio",
-      "sub": "Application",
+      "sub": "Startseite",
       "bg": "https://nwp-cgn.de/img/poser/imgA02.png"
     },
     "link": {
       "path": "/",
       "name": "Start",
-      "icon": "home"
-    }
+      "icon": "home",
+      "sub": false
+    },
+    "navi": [
+      {
+        "path": "/serien",
+        "name": "Serien"
+      },
+      {
+        "path": "/studio",
+        "name": "Studio"
+      }
+    ]
   },
   {
     "id": 1,
-    "slug": "jedit",
+    "slug": "serien",
     "head": {
       "titel": "Nwp-Studio",
-      "sub": "Json-Editor",
-      "bg": "https://nwp-cgn.de/img/poser/imgA06.png"
+      "sub": "South Park Collection",
+      "bg": "https://nwp-cgn.de/img/poser/imgA04.png"
     },
     "link": {
-      "path": "/editor",
-      "name": "Editor",
-      "icon": "terminal"
-    }
+      "path": "/serien",
+      "name": "Serien",
+      "icon": "database",
+      "sub": false
+    },
+    "navi": [
+      {
+        "path": "/serien",
+        "name": "Serien"
+      },
+      {
+        "path": "/serien/list",
+        "name": "Episoden"
+      },
+      {
+        "path": "/serien/editor",
+        "name": "Editor"
+      },
+      {
+        "path": "/serien/add",
+        "name": "Add"
+      }
+    ]
   },
   {
     "id": 2,
-    "slug": "bb",
+    "slug": "studio",
     "head": {
-      "titel": "Blackburn-Studio",
-      "sub": "Classic-Collection",
-      "bg": "https://nwp-cgn.de/img/poser/imgA03.png"
+      "titel": "Blackburn",
+      "sub": "Classic Collection",
+      "bg": "https://nwp-cgn.de/img/poser/imgA05.png"
     },
     "link": {
-      "path": "/bb",
-      "name": "Collection",
-      "icon": "film"
-    }
+      "path": "/studio",
+      "name": "Studio",
+      "icon": "film",
+      "sub": false
+    },
+    "navi": []
   },
   {
     "id": 3,
-    "slug": "dlist",
+    "slug": "serien",
     "head": {
-      "titel": "Nwp-Studio",
-      "sub": "Data-Store",
-      "bg": "https://nwp-cgn.de/img/poser/imgA03.png"
+      "titel": "South Park Collection",
+      "sub": "Episoden Liste"
     },
     "link": {
-      "path": "/dlist",
-      "name": "Database",
-      "icon": "database"
-    }
+      "path": "/serien/list",
+      "name": "Episoden Liste",
+      "icon": "database",
+      "sub": true
+    },
+    "navi": []
+  },
+  {
+    "id": 4,
+    "slug": "serien",
+    "head": {
+      "titel": "South Park Collection",
+      "sub": "Episoden Editor"
+    },
+    "link": {
+      "path": "/serien/editor",
+      "name": "Episoden Editor",
+      "icon": "database",
+      "sub": true
+    },
+    "navi": []
+  },
+  {
+    "id": 5,
+    "slug": "serien",
+    "head": {
+      "titel": "South Park Collection",
+      "sub": "Add Episode"
+    },
+    "link": {
+      "path": "/serien/add",
+      "name": "Add Episoden",
+      "icon": "database",
+      "sub": true
+    },
+    "navi": []
   }
 ];  
 export const navData = appData.map((x) => x.head);
