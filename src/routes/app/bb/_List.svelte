@@ -30,16 +30,25 @@
     <Loader />
   {:then payload}
     <section class="bg-white flex flex-col py-4 space-y-4">
-      <ul>
+      <ul class="list-none divide-y">
         {#each payload as { titel, info, tags, screen, fileurl, thumb, id }}
           <li>
-            <a href="/studio/{id}" class="flex justify-between" use:link>
-              <span>
-                {titel}
-              </span>
-              <span class="capitalize"
-                >{tags ? tags : "Blackburn"} / {id <= 9 ? `0${id}` : id}</span
-              >
+            <a
+              href="/studio/{id}"
+              class="flex justify-between py-2 px-2"
+              use:link
+            >
+              <div class="flex flex-col">
+                <span class="text-lg font-medium">
+                  {titel}
+                </span>
+                <span class="text-sm text-gray-400 font-thin italic">
+                  {info}
+                </span>
+              </div>
+              <div>
+              <span class="text-sm capitalize">{tags ? tags : "Blackburn"} / {id <= 9 ? `0${id}` : id}</span>
+              </div>
             </a>
           </li>
         {:else}

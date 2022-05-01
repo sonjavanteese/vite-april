@@ -12,26 +12,17 @@
 </script>
 
 <Sidebar bind:open>
-  <div class="flex flex-col p-2">
-    <ul>
-      {#each navData as { path, name, icon, sub }, i}
-        {#if i != 0 && !sub}
-          <li>
-            <a href={path} use:link>{name}</a>
-          </li>
-        {/if}
-      {:else}
-        <li>... loading</li>
-      {/each}
-    </ul>
-    {#if $user}
-      <div class="flex flex-col py-4">
-          <button on:click={logout} class="btn btn-red w-full">
-            Logout
-          </button>
-      </div>
-    {/if}
-  </div>
+  <ul>
+    <li>
+      <a href="/" class="flex p-2" use:link>Home</a>
+    </li>
+    <li>
+      <a href="/serien" class="flex p-2" use:link>Serien</a>
+    </li>
+    <li>
+      <a href="/studio" class="flex p-2" use:link>Studio</a>
+    </li>
+  </ul>
 </Sidebar>
 
 {#if !$user}

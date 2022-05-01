@@ -42,7 +42,7 @@ export const routes = {
         },
         conditions: [() => check()]
     }),
-    '/serien/:id': wrap({
+    '/serien/detail/:id': wrap({
         component: SouthPark,
         props: {
             pid: 3,
@@ -57,6 +57,15 @@ export const routes = {
             pid: 4,
             titel: "South Park Collection",
             sub: "Episoden Editor"
+        },
+        conditions: [() => check()]
+    }),
+    '/serien/add': wrap({
+        component: SouthPark,
+        props: {
+            pid: 7,
+            titel: "South Park Collection",
+            sub: "Add Episode"
         },
         conditions: [() => check()]
     }),
