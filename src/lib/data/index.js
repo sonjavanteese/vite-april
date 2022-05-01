@@ -17,6 +17,7 @@ export { default as pageData } from './static/pageData';
 // @index(['./stores/**/*.js'], f => ` export { ${f.name} } from '${f.path}';`)
 export { _app } from './stores/_app';
 export { _bb_classics } from './stores/_bb_classics';
+export { _bb } from './stores/_bb';
 export { _edit } from './stores/_edit';
 export { _editop } from './stores/_editop';
 export { _order } from './stores/_order';

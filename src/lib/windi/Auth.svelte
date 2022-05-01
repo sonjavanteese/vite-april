@@ -3,6 +3,7 @@
   import { fade } from "svelte/transition";
   import Form from "./_auth/_Form.svelte";
   import User from "./_auth/_User.svelte";
+  import logout from "./_auth/logout";
   import { user } from "../data";
   export let popup = true;
 </script>

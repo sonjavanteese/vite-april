@@ -60,9 +60,6 @@
 		width: 3em;
 	}
 
-	.time:last-child {
-		text-align: right;
-	}
 
 	video {
 		width: 100%;

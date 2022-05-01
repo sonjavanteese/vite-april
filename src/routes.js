@@ -4,8 +4,8 @@
 import { wrap } from 'svelte-spa-router/wrap';
 
 import { supabase } from './lib/data';
+import BbClassic from './routes/app/bb/bb-classic.svelte';
 import SouthPark from './routes/app/sp/south-park.svelte';
-import Studio from './routes/app/studio/studio.svelte';
 import NotFound from './routes/not-found.svelte';
 import Start from './routes/start.svelte';
 
@@ -16,16 +16,20 @@ const check = () => {
 export const routes = {
     '/': Start,
     '/studio': wrap({
-        component: Studio,
+        component: BbClassic,
         props: {
-            pid: 2
+            pid: 2,
+            titel: "Blackburn Studios",
+            sub: "Classic Collection"
         },
         conditions: [() => check()]
     }),
-    '/studio/*': wrap({
-        component: Studio,
+    '/studio/:id': wrap({
+        component: BbClassic,
         props: {
-            pid: 2
+            pid: 5,
+            titel: "Blackburn Studios",
+            sub: "Classic Details"
         },
         conditions: [() => check()]
     }),
