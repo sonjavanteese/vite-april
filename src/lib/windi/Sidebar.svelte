@@ -24,7 +24,7 @@
 
 <BackDrop bind:open />
 
-<header class="fixed top-1 right-1 z-20 bg-white bg-opacity-25 rounded-full">
+<header class="fixed top-1 right-2 z-20 bg-white bg-opacity-25 rounded-full">
   <button on:click={() => (open = true)} class="p-3"
     ><i class="gg-menu-grid-o" /></button
   >

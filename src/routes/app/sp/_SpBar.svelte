@@ -71,9 +71,9 @@
 
   <label
     for="c3"
-    class="flex flex-col items-center justify-center self-center w-10 h-10 cursor-pointer  rounded {!edit
+    class="flex flex-col items-center justify-center self-center w-10 h-10 cursor-pointer  rounded {edit
       ? 'text-red-800 bg-red-50'
-      : 'bg-gray-50'}"
+      : 'text-blue-700 bg-blue-50'}"
   >
     <span class="py-2" style="--ggs: 1;">
       <input

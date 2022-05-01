@@ -7,12 +7,27 @@
   import Details from "./_Details.svelte";
   import Edit from "./_Edit.svelte";
   import Add from "./_Add.svelte";
+  import { _sp } from "../../../lib/data";
   export let params;
   export let pid;
   export let titel = null;
   export let sub = null;
-  const prefix = "/serien";
   let open;
+  let bg = "bg-blue-700";
+  $: switch (pid) {
+    case 3:
+      bg = "bg-blue-600";
+      break;
+    case 4:
+      bg = "bg-red-800";
+      break;
+    default:
+      bg = "bg-blue-700";
+      break;
+  }
+  $: {
+    bg = $_sp.edit ? "bg-red-800" : "bg-blue-700";
+  }
 </script>
 
 <Sidebar bind:open>
@@ -34,13 +49,13 @@
 
 {#key pid}
   <Page>
-    <PageHeader {titel} {sub} />
+    <PageHeader {titel} {sub} class="{bg} text-white" />
     {#if pid == 3}
       <Details {params} />
     {:else if pid == 4}
       <Edit {params} />
     {:else if pid == 7}
-      <Add />  
+      <Add />
     {:else}
       <List />
     {/if}

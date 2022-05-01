@@ -1,11 +1,8 @@
 <script>
-	import { addToast } from '$lib/toast';
-	import Page from '$lib/windi/Page.svelte';
-	import Loader from '$lib/windi/Loader.svelte';
-	import PageHeader from '$lib/windi/PageHeader.svelte';
-	import { fetch_south_park_se, _south_park, supabase, sleep, appData } from '$lib/data';
-	const pid = 5;
-	let { navi, head } = appData[pid];
+	import { addToast } from '../../../lib/toast';
+	import Loader from '../../../lib/windi/Loader.svelte';
+	import { fetch_south_park_se, supabase } from '../../../lib/data';
+	
 	let daten = {
 		titel: '',
 		name: '',
@@ -70,8 +67,6 @@
 		} catch (err) {
 			console.log(err);
 		} finally {
-			await sleep(500);
-
 			addToast('Data Updated', 'Action', 'success');
 			loading = false;
 		}
@@ -80,8 +75,7 @@
 	promise = getData();
 </script>
 
-<Page>
-	<PageHeader titel={head.titel} sub={head.sub} class="bg-red-700 text-white" />
+
 	<section class="container mx-auto px-2">
 		<div class="py-4">
 			<!-- ep,titel,name,st,tags,id,assets -->
@@ -229,9 +223,9 @@
 			</footer>
 		</div>
 	</section>
-</Page>
+
 
 <style>
-	@import '$lib/assets/enter.css';
-	@import '$lib/assets/add.css';
+	@import '../../../lib/assets/enter.css';
+	@import '../../../lib/assets/add.css';
 </style>
