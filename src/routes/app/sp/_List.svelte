@@ -1,33 +1,31 @@
 <script>
   import SpBar from './_SpBar.svelte';
   import Loader from '../../../lib/windi/Loader.svelte'
-  import { _sp, sleep, fetch_south_park } from '../../../lib/data'
+  import { _sp, fetch_south_park } from '../../../lib/data'
   import { push, link } from 'svelte-spa-router'
-  let promise
-  let qfilter = {}
+  let promise;
   let daten = []
   const getData = (filter) => {
-    let f = {}
+    let f = {};
     if (filter) {
-      f = filter
+      f = filter;
     }
     return fetch_south_park(f)
       .then((data) => {
-        daten = data
+        daten = data;
       })
       .then(() => {
-        return daten
-      })
-  }
+        return daten;
+      });
+  };
   $: {
-    promise = getData(qfilter)
-    
+    promise = getData($_sp);
   }
 </script>
 
 <div class="container mx-auto px-2">
   
-  <SpBar bind:qfilter />
+  <SpBar class="py-4" />
 
   {#await promise}
     <Loader />

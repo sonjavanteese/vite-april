@@ -1,21 +1,15 @@
 <script>
   import { _bb } from "../../../lib/data";
   // export let seasonlist = [null, 1, 2, 3, 4];
-  export let ebtn = true;
-  export let qfilter = {};
   let order1 = false;
   let order2 = false;
   let edit = false;
+  
+  order1 = $_bb.od1;
+  order2 = $_bb.od2;
+  edit = $_bb.edit;
 
-  qfilter.od1 = $_bb.od1 ? true : false;
-  qfilter.od2 = $_bb.od2 ? true : false;
-  qfilter.edit = $_bb.edit ? true : false;
   $: {
-    qfilter = {
-      od1: order1,
-      od2: order2,
-      edit: edit,
-    };
     $_bb.od1 = order1;
     $_bb.od2 = order2;
     $_bb.edit = edit;
@@ -57,7 +51,8 @@
       </span>
     </span>
   </label>
-  {#if ebtn}
+  <span class="flex-grow"></span>
+
     <label
       for="c3"
       class="flex flex-col items-center justify-center self-center w-10 h-10 cursor-pointer  rounded {!edit
@@ -76,7 +71,7 @@
         </span>
       </span>
     </label>
-  {/if}
+
 </header>
 
 <style>
