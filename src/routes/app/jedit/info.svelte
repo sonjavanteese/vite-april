@@ -1,9 +1,8 @@
 <script>
-  import Loader from "../../../lib/flow/Loader.svelte";
-  import Page from "../../../lib/flow/Page.svelte";
-  import Dheader from "../../../lib/flow/Dheader.svelte";
-  import { _order, _edit } from "../../../lib/stores";
-  import { supabase } from "../../../lib/db";
+  import Dheader from "../../../lib/windi/Dheader.svelte";
+  import Loader from "../../../lib/windi/Loader.svelte";
+  import Page from "../../../lib/windi/Page.svelte";
+  import { user, _order, supabase } from "../../../lib/data";
   import {
     TabControl,
     TabControlItem,

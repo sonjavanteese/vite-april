@@ -4,6 +4,10 @@ export { default as fetch_json_editor } from './api/fetch_json_editor';
 export { default as fetch_profiles } from './api/fetch_profiles';
 export { default as fetch_south_park_se } from './api/fetch_south_park_se';
 export { default as fetch_south_park } from './api/fetch_south_park';
+export { default as fetchDb } from './api/fetchDb';
+export { default as fetchJsonEditor } from './api/fetchJsonEditor';
+export { default as fetchSessionData } from './api/fetchSessionData';
+export { default as fetchUser } from './api/fetchUser';
 export { default as sleep } from './api/sleep';
 export { default as supabase } from './api/supabase';
 export { default as appData } from './static/appData';
@@ -18,6 +22,7 @@ export { _editop } from './stores/_editop';
 export { _order } from './stores/_order';
 export { _profil } from './stores/_profil';
 export { _south_park } from './stores/_south_park';
+export { _sp } from './stores/_sp';
 export { user } from './stores/user';
 // @endindex
 

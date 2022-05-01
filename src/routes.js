@@ -1,15 +1,10 @@
-//@index(['./routes/**/*.svelte'], (f, _) => `import ${_.pascalCase(f.name)} from '${f.path}${f.ext}'`)
+//@index(['./routes/*.svelte', './routes/app/**/*.svelte'], (f, _) => `import ${_.pascalCase(f.name)} from '${f.path}${f.ext}'`)
 
 //@endindex
 import { wrap } from 'svelte-spa-router/wrap';
 
-import { supabase } from './lib/db';
-import BbClassic from './routes/app/classic/bb-classic.svelte';
-import Dinfo from './routes/app/dlist/dinfo.svelte';
-import Dlist from './routes/app/dlist/dlist.svelte';
-import Editor from './routes/app/jedit/editor.svelte';
-import Info from './routes/app/jedit/info.svelte';
-import List from './routes/app/jedit/list.svelte';
+import { supabase } from './lib/data';
+import SouthPark from './routes/app/sp/south-park.svelte';
 import Studio from './routes/app/studio/studio.svelte';
 import NotFound from './routes/not-found.svelte';
 import Start from './routes/start.svelte';
@@ -20,40 +15,45 @@ const check = () => {
 
 export const routes = {
     '/': Start,
-    '/editor': wrap({
-        component: List,
-        conditions: [() => check()]
-    }),
-    '/editor/:id': wrap({
-        component: Info,
-        conditions: [() => check()]
-    }),
-    '/editor/edit/:id': wrap({
-        component: Editor,
-        conditions: [() => check()]
-    }),
-    '/bb': wrap({
-        component: BbClassic,
-        conditions: [() => check()]
-    }),
-    '/bb/*': wrap({
-        component: BbClassic,
-        conditions: [() => check()]
-    }),
     '/studio': wrap({
         component: Studio,
+        props: {
+            pid: 2
+        },
         conditions: [() => check()]
     }),
     '/studio/*': wrap({
         component: Studio,
+        props: {
+            pid: 2
+        },
         conditions: [() => check()]
     }),
-    '/dlist': wrap({
-        component: Dlist,
+    '/serien': wrap({
+        component: SouthPark,
+        props: {
+            pid: 1,
+            titel: "South Park Collection",
+            sub: "Episoden Liste"
+        },
         conditions: [() => check()]
     }),
-    '/dlist/:id': wrap({
-        component: Dinfo,
+    '/serien/:id': wrap({
+        component: SouthPark,
+        props: {
+            pid: 3,
+            titel: "South Park Collection",
+            sub: "Episoden Details"
+        },
+        conditions: [() => check()]
+    }),
+    '/serien/edit/:id': wrap({
+        component: SouthPark,
+        props: {
+            pid: 4,
+            titel: "South Park Collection",
+            sub: "Episoden Editor"
+        },
         conditions: [() => check()]
     }),
     '*': NotFound

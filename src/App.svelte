@@ -2,7 +2,7 @@
   import Router from "svelte-spa-router";
   import { push, location, link } from "svelte-spa-router";
   import { routes } from "./routes";
-  import { supabase, user, _app, navData } from "./lib/data";
+  import { supabase, user, _app, navData, appData } from "./lib/data";
   import { Toasts, addToast } from "./lib/toast";
   user.set(supabase.auth.user());
   supabase.auth.onAuthStateChange((event, session) => {
@@ -16,6 +16,7 @@
     addToast("User Auth Required", "Authentification Error", "error", 3000);
     push("/");
   }
+  console.log(appData)
 </script>
 
 <Toasts />

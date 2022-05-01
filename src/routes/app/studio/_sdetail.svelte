@@ -1,11 +1,10 @@
 <script>
-  import Loader from "../../../lib/flow/Loader.svelte";
-  import Page from "../../../lib/flow/Page.svelte";
-  import Dheader from "../../../lib/flow/Dheader.svelte";
-  import VideoEl from "../../../lib/flow/VideoEl.svelte";
-  import { _order, _edit } from "../../../lib/stores";
+  import Dheader from "../../../lib/windi/Dheader.svelte";
+  import Loader from "../../../lib/windi/Loader.svelte";
+  import Page from "../../../lib/windi/Page.svelte";
+  import VideoEl from "../../../lib/windi/VideoEl.svelte";
+  import { user, _order, supabase, _edit } from "../../../lib/data";
   import { TabControl, TabControlItem } from "renderless-svelte";
-  import { supabase } from "../../../lib/db";
   export let params;
   let oda, loading, promise, open;
   let daten;

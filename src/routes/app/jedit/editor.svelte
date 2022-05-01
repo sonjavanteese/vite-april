@@ -1,9 +1,8 @@
 <script>
+  import Dheader from "../../../lib/windi/Dheader.svelte";
   import Loader from "../../../lib/windi/Loader.svelte";
-  import JsonEdit from "../../../lib/windi/JsonEdit.svelte";
   import Page from "../../../lib/windi/Page.svelte";
-  import { supabase } from "../../../lib/data";
-  import { _editop, _edit } from "../../../lib/stores";
+  import { user, _order, _edit, _editop, supabase } from "../../../lib/data";
   export let params;
   let loading, promise, selected, loaded;
   const fetchDetail = async () => {

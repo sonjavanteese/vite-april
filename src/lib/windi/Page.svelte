@@ -1,8 +1,14 @@
 <script>
+	
   import { fade } from "svelte/transition";
+
   const op_dura = 400;
   const op_out = { duration: op_dura };
+
 </script>
+
+
+
 
 <section transition:fade={op_out} {...$$restProps}>
   <div>
