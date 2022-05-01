@@ -4,9 +4,7 @@
 
   import {
     fetch_south_park,
-    _south_park,
     supabase,
-    sleep,
   } from "../../../lib/data";
   export let params;
   let daten = {};
@@ -35,7 +33,6 @@
     } catch (err) {
       console.log(err);
     } finally {
-      await sleep(500);
       reload();
       addToast("Data Updated", "Action", "success");
       loading = false;
@@ -46,7 +43,7 @@
     updateData(daten);
   };
   const reload = () => {
-    _south_park.fetchAll();
+    promise = getData();
   };
   promise = getData();
 </script>

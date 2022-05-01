@@ -12,8 +12,8 @@ export const fetch_south_park = async (filter) => {
   }
 
   query = query
-    .order('st', { ascending: !filterSets.od1 })
-    .order('ep', { ascending: !filterSets.od2 })
+    .order('st', { ascending: !filterSets.od1})
+    .order('ep', { ascending: !filterSets.od2})
 
   let { data, error } = await query
   if (data) {
